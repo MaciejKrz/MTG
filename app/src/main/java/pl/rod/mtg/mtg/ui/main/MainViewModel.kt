@@ -14,4 +14,12 @@ class MainViewModel : ViewModel() {
         return playerOneLifeCount
     }
 
+    fun getPlayerTwoLifeCount(): LiveData<Int> {
+        if (!::playerOneLifeCount.isInitialized) {
+            playerOneLifeCount = MutableLiveData<Int>().apply { postValue(20)}
+        }
+
+        return playerOneLifeCount
+    }
+
 }

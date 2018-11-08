@@ -1,7 +1,6 @@
 package pl.rod.mtg.mtg.ui.main
 
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProviders
+import android.arch.lifecycle.*
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.*
@@ -21,13 +20,16 @@ class MainFragment : Fragment() {
         return inflater.inflate(R.layout.main_fragment, container, false)
     }
 
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
         viewModel.getPlayerOneLifeCount().observe(this, Observer<Int>{ value ->
             life_player_1.text = value.toString()
-            life_player_2.text = "40"
+        })
+
+        viewModel.getPlayerTwoLifeCount().observe(this, Observer<Int>{ value ->
+            life_player_2.text = value.toString()
         })
     }
-
 }
