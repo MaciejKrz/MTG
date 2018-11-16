@@ -13,19 +13,21 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
+        <NumberPicker
             android:id="@+id/life_player_1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:onClick="decreasePlayerOne"
+            android:scrollbarSize="0dp"
+            android:showDividers="none"
+            android:textSize="160dp"
+            android:rotation = "180"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:rotation = "180"
-            android:textSize="120dp"
-            android:text="20"
-            android:onClick="decreasePlayerOne"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
     </RelativeLayout>
 
