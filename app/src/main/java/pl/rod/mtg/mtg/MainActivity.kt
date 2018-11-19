@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import kotlinx.android.synthetic.main.main_fragment.life_player_2
+import pl.rod.mtg.mtg.ui.main.LifeCountWheelAdapter
 
 class MainActivity : AppCompatActivity() {
 
@@ -11,12 +12,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
 
-        val numberPicker = findViewById<biz.borealis.numberpicker.NumberPicker>(R.id.life_player_1)
+        val numberPicker = findViewById<com.super_rabbit.wheel_picker.WheelPicker>(R.id.life_player_1)
 
-        numberPicker.min = 0
-        numberPicker.max = 40
-        numberPicker.textSize = 180.0F
-        numberPicker.textSizeSelected = 340.0F
+        numberPicker.setMin(0)
+        numberPicker.setMax(40)
+        numberPicker.setAdapter(LifeCountWheelAdapter())
+
+
         //numberPicker.selectedNumber = 20
 //        numberPicker.onValueChangeListener { picker, oldVal, newVal ->
 //
