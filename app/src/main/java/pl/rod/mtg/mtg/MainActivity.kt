@@ -12,19 +12,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
 
-        val numberPicker = findViewById<com.super_rabbit.wheel_picker.WheelPicker>(R.id.life_player_1)
-
-        numberPicker.setMin(0)
-        numberPicker.setMax(40)
-        numberPicker.setAdapter(LifeCountWheelAdapter())
-
-
-        //numberPicker.selectedNumber = 20
-//        numberPicker.onValueChangeListener { picker, oldVal, newVal ->
+//        val numberPicker = findViewById<com.super_rabbit.wheel_picker.WheelPicker>(R.id.life_player_1)
 //
-//            //Display the newly selected number to text view
-//            //text_view.text = "Selected Value : $newVal"
-//        }
+//        numberPicker.setMin(0)
+//        numberPicker.setMax(40)
+//        numberPicker.setAdapter(LifeCountWheelAdapter())
     }
 
     fun decreasePlayerOne(view: View) {
