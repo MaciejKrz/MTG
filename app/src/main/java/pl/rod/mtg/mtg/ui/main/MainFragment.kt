@@ -11,10 +11,6 @@ import pl.rod.mtg.mtg.R
 
 class MainFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = MainFragment()
-    }
-
     private lateinit var viewModel: MainViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -22,16 +18,22 @@ class MainFragment : Fragment() {
         return inflater.inflate(R.layout.main_fragment, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
-        viewModel.getPlayerOneLifeCount().observe(this, Observer<Int>{ value ->
-           // life_player_1.text = value.toString()
+        val model = ViewModelProviders.of(this).get(MainViewModel::class.java)
+
+        model.getPlayerOneLifeCount().observe(this, Observer<Int>{life ->
+            life_player_1.text = life.toString()
         })
 
-        viewModel.getPlayerTwoLifeCount().observe(this, Observer<Int>{ value ->
-            life_player_2.text = value.toString()
+        model.getPlayerTwoLifeCount().observe(this, Observer<Int>{life ->
+            life_player_2.text = life.toString()
         })
+
+        life_player_1.setOnClickListener { model.decreasePlayerOneLife() }
+
+        life_player_2.setOnClickListener { model.decreasePlayerTwoLife() }
     }
+
 }
