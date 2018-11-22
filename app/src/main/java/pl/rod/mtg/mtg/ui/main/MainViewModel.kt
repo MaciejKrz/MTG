@@ -4,12 +4,12 @@ import android.arch.lifecycle.*
 
 
 class MainViewModel : ViewModel() {
-    private lateinit var playerOneLifeCount: LiveData<Int>
-    private lateinit var playerTwoLifeCount: LiveData<Int>
+    private lateinit var playerOneLifeCount: MutableLiveData<Int>
+    private lateinit var playerTwoLifeCount: MutableLiveData<Int>
 
     fun getPlayerOneLifeCount(): LiveData<Int> {
         if (!::playerOneLifeCount.isInitialized) {
-            playerOneLifeCount = MutableLiveData<Int>().apply { postValue(20)}
+            playerOneLifeCount = MutableLiveData<Int>().apply { setValue(20)}
         }
 
         return playerOneLifeCount
@@ -17,18 +17,31 @@ class MainViewModel : ViewModel() {
 
     fun getPlayerTwoLifeCount(): LiveData<Int> {
         if (!::playerTwoLifeCount.isInitialized) {
-            playerTwoLifeCount = MutableLiveData<Int>().apply { postValue(20)}
+            playerTwoLifeCount = MutableLiveData<Int>().apply { setValue(20)}
         }
 
         return playerTwoLifeCount
     }
 
     fun decreasePlayerOneLife(): LiveData<Int> {
-        return MutableLiveData<Int>().apply { postValue(playerOneLifeCount.value!! - 1)}
+        return playerOneLifeCount.apply { setValue(playerOneLifeCount.value!! - 1)}
     }
 
     fun decreasePlayerTwoLife(): LiveData<Int> {
-        return MutableLiveData<Int>().apply { postValue(playerTwoLifeCount.value!! - 1)}
+        return playerTwoLifeCount.apply { setValue(playerTwoLifeCount.value!! - 1)}
+    }
+
+    fun increasePlayerOneLife(): LiveData<Int> {
+        return playerOneLifeCount.apply { setValue(playerOneLifeCount.value!! + 1)}
+    }
+
+    fun increasePlayerTwoLife(): LiveData<Int> {
+        return playerTwoLifeCount.apply { setValue(playerTwoLifeCount.value!! + 1)}
+    }
+
+    fun resetLife() {
+        playerOneLifeCount.apply { setValue(20)}
+        playerTwoLifeCount.apply { setValue(20)}
     }
 
 }

@@ -7,6 +7,9 @@ import android.os.Bundle
 import android.view.*
 import kotlinx.android.synthetic.main.main_fragment.life_player_2
 import kotlinx.android.synthetic.main.main_fragment.life_player_1
+import kotlinx.android.synthetic.main.main_fragment.plusLifeButton_player_1
+import kotlinx.android.synthetic.main.main_fragment.plusLifeButton_player_2
+import kotlinx.android.synthetic.main.main_fragment.resetButton
 import pl.rod.mtg.mtg.R
 
 class MainFragment : Fragment() {
@@ -34,6 +37,12 @@ class MainFragment : Fragment() {
         life_player_1.setOnClickListener { model.decreasePlayerOneLife() }
 
         life_player_2.setOnClickListener { model.decreasePlayerTwoLife() }
+
+        plusLifeButton_player_1.setOnClickListener { model.increasePlayerOneLife() }
+
+        plusLifeButton_player_2.setOnClickListener { model.increasePlayerTwoLife() }
+
+        resetButton.setOnClickListener { model.resetLife() }
     }
 
 }

@@ -36,6 +36,7 @@
             android:layout_centerInParent="true"
             android:text="@string/_20"
             android:textSize="120sp"
+            android:rotation="180"
             app:layout_constraintBottom_toTopOf="@+id/plusLifeButton_player_1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
