@@ -13,21 +13,20 @@
         android:layout_height="match_parent"
         android:layout_weight=".5">
 
-        <!--<com.super_rabbit.wheel_picker.WheelPicker-->
-            <!--android:id="@+id/life_player_1"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:layout_centerHorizontal="true"-->
-            <!--android:layout_centerVertical="true"-->
-            <!--android:gravity="center"-->
-            <!--android:onClick="decreasePlayerOne"-->
-            <!--android:scrollbarSize="0dp"-->
-            <!--android:showDividers="none"-->
-            <!--android:textSize="360dp"-->
-            <!--app:layout_constraintBottom_toBottomOf="parent"-->
-            <!--app:layout_constraintEnd_toEndOf="parent"-->
-            <!--app:layout_constraintStart_toStartOf="parent"-->
-            <!--app:layout_constraintTop_toTopOf="parent" />-->
+        <com.super_rabbit.wheel_picker.WheelPicker
+            android:id="@+id/wheel_life_player_1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:scrollbarSize="0dp"
+            android:showDividers="none"
+            android:textSize="960sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/life_player_1"
@@ -78,7 +77,20 @@
         android:layout_weight=".5"
         android:layout_gravity="end" >
 
-
+        <com.super_rabbit.wheel_picker.WheelPicker
+            android:id="@+id/wheel_life_player_2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:scrollbarSize="0dp"
+            android:showDividers="none"
+            android:textSize="960sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/life_player_2"

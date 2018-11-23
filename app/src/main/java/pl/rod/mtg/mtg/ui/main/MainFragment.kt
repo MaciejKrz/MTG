@@ -10,6 +10,8 @@ import kotlinx.android.synthetic.main.main_fragment.life_player_1
 import kotlinx.android.synthetic.main.main_fragment.plusLifeButton_player_1
 import kotlinx.android.synthetic.main.main_fragment.plusLifeButton_player_2
 import kotlinx.android.synthetic.main.main_fragment.resetButton
+import kotlinx.android.synthetic.main.main_fragment.wheel_life_player_1
+import kotlinx.android.synthetic.main.main_fragment.wheel_life_player_2
 import pl.rod.mtg.mtg.R
 
 class MainFragment : Fragment() {
@@ -43,6 +45,19 @@ class MainFragment : Fragment() {
         plusLifeButton_player_2.setOnClickListener { model.increasePlayerTwoLife() }
 
         resetButton.setOnClickListener { model.resetLife() }
+
+        configureWheels(model)
+    }
+
+    private fun configureWheels(model: MainViewModel) {
+        wheel_life_player_1.visibility = View.GONE
+        wheel_life_player_1.setMax(60)
+        wheel_life_player_1.setMin(0)
+        wheel_life_player_1.scrollTo(20)
+        wheel_life_player_2.visibility = View.GONE
+        wheel_life_player_2.setMax(60)
+        wheel_life_player_2.setMin(0)
+        wheel_life_player_2.scrollTo(20)
     }
 
 }
